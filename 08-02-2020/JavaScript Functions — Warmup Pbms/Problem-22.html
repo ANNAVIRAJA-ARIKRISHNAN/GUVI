@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>getProperty</title>
+  </head>
+  <body>
+    <script>
+      var obj = {
+        mykey: "value",
+      };
+      function getProperty(obj, index) {
+        return obj[index];
+      }
+      console.log(getProperty(obj, "mykey"));
+      console.log(getProperty(obj, "dummykey"));
+    </script>
+  </body>
+</html>

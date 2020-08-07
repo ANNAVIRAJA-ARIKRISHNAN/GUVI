@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Print odd numbers in an array</title>
+  </head>
+  <body>
+    <script>
+      var names = ["raja", "mani", "java script", "mathan", "adithya"];
+      (function (array) {
+        array.forEach(function (item, index) {
+          var split = item.split("");
+          console.log(split[0].toUpperCase() + item.slice(1));
+        });
+      })(names);
+    </script>
+  </body>
+</html>

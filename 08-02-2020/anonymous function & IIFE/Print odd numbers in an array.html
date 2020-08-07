@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Print odd numbers in an array</title>
+  </head>
+  <body>
+    <script>
+      var numbers = [
+        4,
+        5,
+        8,
+        2,
+        9,
+        26,
+        90,
+        325,
+        35,
+        257,
+        268,
+        2789,
+        269,
+        2137,
+        267378,
+        373,
+        634,
+      ];
+      (function (array) {
+        array.forEach(function (item, index) {
+          if (item % 2 === 0) console.log(item);
+        });
+      })(numbers);
+    </script>
+  </body>
+</html>

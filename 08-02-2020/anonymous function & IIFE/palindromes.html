@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>palindromes</title>
+  </head>
+  <body>
+    <script>
+      var names = ["Malayalam", "raja", "liril", "appa", "chennai"];
+      (function (array) {
+        for (let n of array) if (isPalindromes(n)) console.log(n);
+      })(names);
+
+      function isPalindromes(name) {
+        name = name.toLowerCase();
+        var split = name.split("");
+        return name === split.reverse().join("");
+      }
+    </script>
+  </body>
+</html>

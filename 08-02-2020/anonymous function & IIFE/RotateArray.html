@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rotate an array by k times</title>
+  </head>
+  <body>
+    <script>
+      var num = [1, 3, 56, 6, 59, 35, 78, 80];
+      var rotation = 2;
+      var length = num.length;
+      console.log(num);
+      console.log("Rotate Right");
+      (function (array) {
+        let first = num.slice((length - rotation) % length, length);
+        let second = num.slice(0, (length - rotation) % length);
+        console.log(first.concat(second));
+      })(num, rotation);
+
+      console.log("Rotate Left");
+      (function (array) {
+        let first = num.slice(rotation, length);
+        let second = num.slice(0, rotation);
+        console.log(first.concat(second));
+      })(num, rotation);
+    </script>
+  </body>
+</html>

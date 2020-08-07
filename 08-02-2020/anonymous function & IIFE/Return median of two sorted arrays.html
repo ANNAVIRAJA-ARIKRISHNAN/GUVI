@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Return median of two sorted arrays same size</title>
+  </head>
+  <body>
+    <script>
+      var num1 = [1, 3, 56, 6, 59, 35, 78, 80];
+      var num2 = [2, 79, 38, 23, 96, 23, 91, 46];
+      var numConcat = num1.concat(num2);
+      numConcat = numConcat.sort(function (a, b) {
+        return a - b;
+      });
+      (function (array) {
+        console.log(array);
+        var middle = parseInt(array.length / 2.0);
+        console.log(array[middle - 1], " -> ", array[middle]);
+      })(numConcat);
+    </script>
+  </body>
+</html>

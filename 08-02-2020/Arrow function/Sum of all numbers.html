@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sum of all numbers in an array</title>
+  </head>
+  <body>
+    <script>
+      var numbers = [4, 5, 8, 2, 9, 26];
+      var sumOfNumbers = numbers.reduce((totalValues, item) => {
+        return totalValues + item;
+      }, 0);
+      console.log(numbers);
+      console.log(sumOfNumbers);
+    </script>
+  </body>
+</html>

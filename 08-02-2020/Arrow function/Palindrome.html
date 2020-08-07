@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Return all the palindromes in an array</title>
+  </head>
+  <body>
+    <script>
+      var names = ["Malayalam", "raja", "liril", "appa", "chennai"];
+      var palindromeName = names.filter((item) => {
+        let split = item.toLowerCase().split("");
+        if (split.reverse().join("") === item.toLowerCase()) return item;
+      });
+      console.log(names);
+      console.log(palindromeName);
+    </script>
+  </body>
+</html>

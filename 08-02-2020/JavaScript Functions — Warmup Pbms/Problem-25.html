@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>countPositivesSumNegatives</title>
+  </head>
+  <body>
+    <script>
+      var arr = [-5, 10, -3, 12, -9, 5, 90, 0, 1];
+      var ar2 = function countPositivesSumNegatives(arr) {
+        var positive = 0;
+        var negative = 0;
+        for (var i in arr) {
+          if (arr[i] > 0) positive += arr[i];
+          else negative += arr[i];
+        }
+        return [positive, negative];
+      };
+      console.log(ar2(arr));
+    </script>
+  </body>
+</html>

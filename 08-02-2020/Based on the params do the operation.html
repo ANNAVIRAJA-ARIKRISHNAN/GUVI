@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Based on the params do the operation</title>
+  </head>
+  <body>
+    <script>
+      var arrayObject = [];
+      arrayObject.push(add);
+      function add(opr1, opr2) {
+        return opr1 + opr2;
+      }
+      arrayObject.push(sub);
+      function sub(opr1, opr2) {
+        return opr1 - opr2;
+      }
+      arrayObject.push(mul);
+      function mul(opr1, opr2) {
+        return opr1 * opr2;
+      }
+      function ActionMethod(operatorIndex, arrayObject) {
+        var opr1 = 10;
+        var opr2 = 90;
+        console.log(arrayObject[operatorIndex - 1](opr1, opr2));
+      }
+      console.log("Add");
+      ActionMethod(1, arrayObject);
+      console.log("Mul");
+      ActionMethod(3, arrayObject);
+      console.log("Sub");
+      ActionMethod(2, arrayObject);
+    </script>
+  </body>
+</html>

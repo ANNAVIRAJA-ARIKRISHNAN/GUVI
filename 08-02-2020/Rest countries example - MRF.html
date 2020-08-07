@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Get the countries in asia - filter</title>
+  </head>
+  <body>
+    <script>
+      var xmlRequest = new XMLHttpRequest();
+
+      xmlRequest.onreadystatechange = function () {
+        //console.log(xmlRequest.readyState);
+        if (xmlRequest.status === 200 && xmlRequest.readyState === 4) {
+          let countries = JSON.parse(this.responseText);
+          //console.log(countries);
+
+          console.log("Print only Asia regions countries");
+          var asia = countries.filter((a) => a.region === "Asia");
+          console.log(asia);
+
+          console.log("Print only population < 200000 sountries");
+          var population = countries.filter((a) => a.population < 200000);
+          console.log(population);
+
+          console.log(
+            "Bumpup the current population of all the countries by 1L"
+          );
+          var bumpup = countries.map((a) => a.population < 100000);
+          console.log(bumpup);
+
+          console.log("convert all the names in capital");
+          var upperCase = countries.map((a) => a.name.toUpperCase());
+          console.log(upperCase);
+
+          console.log("print the name capital flag - Map");
+          var details = countries.map((a) => [a.name, a.capital, a.flag]);
+          console.log(details);
+
+          console.log("print the name capital flag - ForEach");
+          var detailsFilter = countries.forEach((a) =>
+            console.log(a.name, a.capital, a.flag)
+          );
+          console.log(detailsFilter);
+
+          console.log("Total population of all countries");
+          var populationTotal = countries
+            .map((item) => item.population)
+            .reduce((sum, value) => {
+              return sum + value;
+            }, 0);
+          console.log(populationTotal);
+
+          console.log("Total population of Asia region countries");
+          var asiaPopulationTotal = countries
+            .filter((a) => a.region === "Asia")
+            .map((item) => item.population)
+            .reduce((sum, value) => {
+              return sum + value;
+            }, 0);
+          console.log(asiaPopulationTotal);
+        }
+      };
+      xmlRequest.onerror = function (error) {
+        console.log(error);
+      };
+      xmlRequest.open("GET", "https://restcountries.eu/rest/v2/all", true);
+      xmlRequest.send();
+    </script>
+  </body>
+</html>
